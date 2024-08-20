@@ -1,0 +1,82 @@
+
+import React, { useState } from "react";
+import { Image,Text, View } from "react-native";
+import { Input, Button } from "@rneui/themed";
+
+import styles from "./styles";
+
+export default function RegistrationScreen({ navigation }) {
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onFooterLinkPress = () => {
+    navigation.navigate("Login");
+  };
+
+  const onLoginPress = () => {
+    alert("Cadastrar");
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.logo} source={require("../../../assets/icon.png")} />
+   
+      <Input
+        containerStyle={{}}
+        disabledInputStyle={{ background: "#ddd" }}
+        label="Nome Completo"
+        placeholder="nome completo"
+        onChangeText={(text) => setFullName(text)}
+        value={fullName}
+        autoCapitalize="none"
+      />
+      
+      <Input
+        containerStyle={{}}
+        disabledInputStyle={{ background: "#ddd" }}
+        label="Email"
+        placeholder="exemplo@email.com"
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+        autoCapitalize="none"
+      />
+       <Input
+        containerStyle={{}}
+        disabledInputStyle={{ background: "#ddd" }}
+        label="Senha"
+        placeholder="senha"
+        secureTextEntry        
+        onChangeText={(text) => setPassword(text)}
+        value={password}
+        autoCapitalize="none"
+      />
+
+      <Button
+        title="Cadastrar"
+        buttonStyle={{
+          backgroundColor: "#788eec",
+          borderWidth: 2,
+          borderColor: "white",
+          borderRadius: 30,
+        }}
+        containerStyle={{
+          width: 200,
+          marginHorizontal: 50,
+          marginVertical: 10,
+        }}
+        titleStyle={{ fontWeight: "bold" }}
+        onPress={() => onLoginPress()}
+      />
+
+      <View style={styles.footerView}>
+        <Text style={styles.footerText}>
+          Já tem uma conta?{" "}
+          <Text onPress={onFooterLinkPress} style={styles.footerLink}>
+            Clique aqui
+          </Text>
+        </Text>
+      </View>
+    </View>
+  );
+}
