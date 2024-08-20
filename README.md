@@ -1,0 +1,23 @@
+# PROJETO FIREBASE
+<div align="center"><img src="https://github.com/BrunoWuo/CoffeeApp/blob/main/CoffeeApp.png" width=640></div>
+
+### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
+** Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
+* Stack Navigator - https://reactnavigation.org/docs/stack-navigator
+* React Native Elements - https://reactnativeelements.com/
+* Firebase - https://firebase.google.com/?hl=pt-br
+* Expo Firebase - https://docs.expo.dev/guides/using-firebase/
+
+
+#### Lista de Arquivos
+Baixar o arquivo da aula correspondente
+
+* 01 - Estrutura Base do Projeto - [Download](https://github.com/BrunoWuo/CoffeeApp/archive/refs/heads/01EstruturaBase.zip)
+  Instale as dependências do projeto e inicie:
+```sh
+# Instale as dependências do projeto e inicie:
+$ npm install
+$ npx expo start
+```
+
+
