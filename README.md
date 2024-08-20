@@ -1,5 +1,5 @@
 # PROJETO FIREBASE
-<div align="center"><img src="https://github.com/BrunoWuo/CoffeeApp/blob/main/CoffeeApp.png" width=640></div>
+<div align="center"><img src="..." width=640></div>
 
 ### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
 ** Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
