@@ -9,12 +9,13 @@ export default function RegistrationScreen({ navigation }) {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const onFooterLinkPress = () => {
     navigation.navigate("Login");
   };
 
-  const onLoginPress = () => {
+  const onRegisterPress = () => {
     alert("Cadastrar");
   };
 
@@ -51,6 +52,16 @@ export default function RegistrationScreen({ navigation }) {
         value={password}
         autoCapitalize="none"
       />
+        <Input
+        containerStyle={{}}
+        disabledInputStyle={{ background: "#ddd" }}
+        label="Confirmar Senha"
+        placeholder="confirmar senha"
+        secureTextEntry        
+        onChangeText={(text) => setConfirmPassword(text)}
+        value={confirmPassword}
+        autoCapitalize="none"
+      />
 
       <Button
         title="Cadastrar"
@@ -66,7 +77,7 @@ export default function RegistrationScreen({ navigation }) {
           marginVertical: 10,
         }}
         titleStyle={{ fontWeight: "bold" }}
-        onPress={() => onLoginPress()}
+        onPress={() => onRegisterPress()}
       />
 
       <View style={styles.footerView}>
