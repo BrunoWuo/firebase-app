@@ -13,6 +13,7 @@
 Baixar o arquivo da aula correspondente
 
 * 01 - Estrutura Base do Projeto - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte01.zip)
+* 02 - Configuração do Firebase / Teste de Registro de Usuario - [Download]()
 
 ```sh
 # Instale as dependências do projeto e inicie:
