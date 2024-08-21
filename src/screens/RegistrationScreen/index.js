@@ -3,6 +3,7 @@ import { Image, Text, View } from "react-native";
 import { Input, Button } from "@rneui/themed";
 
 import styles from "./styles";
+
 import { auth } from "../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -21,9 +22,13 @@ export default function RegistrationScreen({ navigation }) {
       alert("Senhas não conferem!");
       return;
     }
-    const user = await createUserWithEmailAndPassword(auth, "teste2@teste.com", "123456")
+    const user = await createUserWithEmailAndPassword(auth, email, password)
     console.log(user)
     
+    setFullName('')
+    setEmail('')
+    setPassword('')
+    setConfirmPassword('')
   };
 
   return (
