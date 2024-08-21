@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Image, Text, View } from "react-native";
 import { Input, Button } from "@rneui/themed";
 
-
-
 import styles from "./styles";
+
+import { auth } from "../../firebase/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -14,9 +15,27 @@ export default function LoginScreen({ navigation }) {
     navigation.navigate("Registration");
   };
 
-  const onLoginPress = () => {
-    alert("login");
-  };
+  // async function onLoginPress() {
+  //   const user = await signInWithEmailAndPassword(auth, email, password)
+  //   alert('LOGADO')
+  //   console.log(user)
+  // };
+
+  async function onLoginPress() {
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      navigation.navigate("Home");
+    } catch (err) {
+      if (err.code === "auth/invalid-credential") {
+        alert('Email inválido');
+      } else if (err.code === "auth/missing-password") {
+        alert('A Senha é obrigatória');
+      } else {
+        console.log(err);
+      }
+    }
+  }
 
   return (
     <View style={styles.container}>
