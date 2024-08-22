@@ -17,13 +17,17 @@ export default function RegistrationScreen({ navigation }) {
   };
 
    async function onRegisterPress() {
-    if (password !== confirmPassword) {
-      alert("Senhas não conferem!");
-      return;
+    if (password !== confirmPassword){
+        alert("Senhas não conferem.");
     }
-    const user = await createUserWithEmailAndPassword(auth, "teste2@teste.com", "123456")
+
+    const user = await createUserWithEmailAndPassword(auth, email, password)
     console.log(user)
-    
+
+    setFullName('')
+    setEmail('')
+    setPassword('')
+    setConfirmPassword('')
   };
 
   return (
