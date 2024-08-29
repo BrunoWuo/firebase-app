@@ -15,11 +15,9 @@ export default function LoginScreen({ navigation }) {
     navigation.navigate("Registration");
   };
 
-  // async function onLoginPress() {
-  //   const user = await signInWithEmailAndPassword(auth, email, password)
-  //   alert('LOGADO')
-  //   console.log(user)
-  // };
+  const resetarSenha=()=>{
+    alert("Resetar Senha")
+  }
 
   async function onLoginPress() {
     try {
@@ -85,6 +83,7 @@ export default function LoginScreen({ navigation }) {
             Clique aqui
           </Text>
         </Text>
+       <Text style={styles.footerLink} onPress={resetarSenha}></Text>
       </View>
     </View>
   );
