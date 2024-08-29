@@ -9,6 +9,12 @@
 * Expo Firebase - https://docs.expo.dev/guides/using-firebase/
 
 
+### No Firebase
+* Criar um novo projeto
+* Configurar o App
+* Configurar a Autenticação por Email/Senha
+
+
 #### Lista de Arquivos
 Baixar o arquivo da aula correspondente
 
