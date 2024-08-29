@@ -18,13 +18,21 @@ export default function RegistrationScreen({ navigation }) {
   };
 
    async function onRegisterPress() {
-    if (password !== confirmPassword) {
-      alert("Senhas não conferem!");
-      return;
+    if (password !== confirmPassword){
+        alert("Senhas não conferem.");
     }
-    const user = await createUserWithEmailAndPassword(auth, email, password)
-    console.log(user)
-    
+
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password)
+      console.log(user)
+      } catch (err) {
+      if(err.code == "auth/invalid-email"){
+        Alert.alert("Erro", "Email ou Senha Invalido")
+      } else if(err.code == "auth/weak-password") {
+        Alert.alert("Erro", "A senha deve ter pelo menos 6 caracteres")
+      }
+      console.log(err);
+    }
     setFullName('')
     setEmail('')
     setPassword('')
