@@ -1,5 +1,10 @@
 # PROJETO FIREBASE
-<div align="center"><img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725139852.png" width=640></div>
+<div align="center">
+  <img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725139852.png" width=240>
+  <img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725139858.png" width=240>
+
+</div>
+
 
 ### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
 ** Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
