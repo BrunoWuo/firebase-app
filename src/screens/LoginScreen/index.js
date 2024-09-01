@@ -11,8 +11,12 @@ import { Input, Button } from "@rneui/themed";
 
 import styles from "./styles";
 
-import { auth } from "../../firebase/firebaseConfig";
-import { signInWithEmailAndPassword,  sendPasswordResetEmail } from "firebase/auth";
+import { auth, db } from "../../firebase/firebaseConfig";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -23,36 +27,49 @@ export default function LoginScreen({ navigation }) {
     navigation.navigate("Registration");
   };
 
-  
-  async function resetPassword() {   
+  async function resetPassword() {
     try {
-     await sendPasswordResetEmail(auth, email)
-      Alert.alert("Redefinir Senha", "Email enviado para " + email)
+      await sendPasswordResetEmail(auth, email);
+      Alert.alert("Redefinir Senha", "Email enviado para " + email);
     } catch (err) {
       if (err.code === "auth/missing-email") {
-        Alert.alert("Erro","Digite o seu Email");
-      } 
-      console.log(err)
-    }    
-  };
-  
+        Alert.alert("Erro", "Digite o seu Email");
+      }
+      console.log(err);
+    }
+  }
 
   async function onLoginPress() {
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
-      navigation.navigate("Home");
+      const response = await signInWithEmailAndPassword(auth, email, password);
+
+      //Para Recuperar em users
+      const uid = response.user.uid;
+      const userDocRef = doc(collection(db, "users"), uid); // Create doc reference
+      const userSnapshot = await getDoc(userDocRef); // Get user document
+
+      console.log(userDocRef)
+
+      if (userSnapshot.exists()) {
+        const userData = userSnapshot.data();
+        console.log(userData); // Verificar os dados no console
+        navigation.navigate("Home", { userRef: userData });
+      } else {
+        console.log("Usuário não encontrado.");
+      }
+      
     } catch (err) {
       if (err.code === "auth/invalid-credential") {
-        Alert.alert("Erro","Email ou Senha inválido");
+        Alert.alert("Erro", "Email ou Senha inválido");
       } else if (err.code === "auth/missing-password") {
-        Alert.alert("Erro","A Senha é obrigatória");
+        Alert.alert("Erro", "A Senha é obrigatória");
       } else {
         console.log(err);
       }
+    } finally {
+      setEmail("");
+      setPassword("");
     }
-    setEmail("");
-    setPassword("");
   }
 
   return (

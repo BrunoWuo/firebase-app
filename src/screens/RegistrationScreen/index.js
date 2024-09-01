@@ -5,14 +5,15 @@ import {
   View,
   TouchableWithoutFeedback,
   Keyboard,
-  Alert
+  Alert,
 } from "react-native";
 import { Input, Button } from "@rneui/themed";
 
 import styles from "./styles";
 
-import { auth } from "../../firebase/firebaseConfig";
+import { auth, db } from "../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { collection, setDoc, doc } from "firebase/firestore";
 
 export default function RegistrationScreen({ navigation }) {
   const [fullName, setFullName] = useState("");
@@ -23,14 +24,34 @@ export default function RegistrationScreen({ navigation }) {
   const onFooterLinkPress = () => {
     navigation.navigate("Login");
   };
+
   async function onRegisterPress() {
     if (password !== confirmPassword) {
       alert("Senhas não conferem.");
     }
 
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      //Criar a conta do usuario
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      // Captura os dados e armazena em data
+      const uid = response.user.uid;
+      const data = {
+        id: uid,
+        email,
+        fullName,
+      };
+
+      //Para salver em users
+      const usersCollectionRef = collection(db, "users"); // Referência para a coleção "users"
+      const userDocRef = doc(usersCollectionRef, uid); // Cria uma referência para o documento com o ID do usuário
+      await setDoc(userDocRef, data); // Adiciona os dados ao documento
+      navigation.navigate("Home", { userRef: data }); // navega para a tela home apos o cadastro      
+      console.log(data);
     } catch (err) {
       if (err.code == "auth/invalid-email") {
         Alert.alert("Erro", "Email ou Senha Invalido");
@@ -40,11 +61,12 @@ export default function RegistrationScreen({ navigation }) {
         Alert.alert("Erro", "Faltando Email");
       }
       console.log(err);
+    } finally {
+      setFullName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
-    setFullName("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
   }
 
   return (

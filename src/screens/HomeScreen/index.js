@@ -2,11 +2,11 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { auth } from "../../firebase/firebaseConfig";
-// import { signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 
 
-export default function HomeScreen({ navigation }) {
-
+export default function HomeScreen({ navigation, route }) {
+const { userRef } = route.params;
   
 async function onLogOutPress() {
   try {
@@ -20,7 +20,7 @@ async function onLogOutPress() {
 
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Text>Ola {userRef.fullName}! </Text>
 
       <Text style={styles.link} onPress={onLogOutPress}>
         Logout
