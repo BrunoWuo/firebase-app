@@ -81,7 +81,6 @@ export default function LoginScreen({ navigation }) {
         />
 
         <Input
-          containerStyle={{}}
           disabledInputStyle={{ background: "#ddd" }}
           label="Email"
           placeholder="exemplo@email.com"
@@ -90,7 +89,6 @@ export default function LoginScreen({ navigation }) {
           autoCapitalize="none"
         />
         <Input
-          containerStyle={{}}
           disabledInputStyle={{ background: "#ddd" }}
           label="Senha"
           placeholder="senha"
