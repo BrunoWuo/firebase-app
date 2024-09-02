@@ -28,6 +28,17 @@ export default function StackNavigator() {
   }
   return (
     <Stack.Navigator>
+      
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Registration"
+        component={RegistrationScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -42,16 +53,6 @@ export default function StackNavigator() {
             elevation: 5, // Elevação para Android
           },
         }}
-      />
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Registration"
-        component={RegistrationScreen}
-        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
