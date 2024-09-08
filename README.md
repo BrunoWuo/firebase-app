@@ -5,7 +5,6 @@
 
 </div>
 
-
 ### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
 ** Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
 * Stack Navigator - https://reactnavigation.org/docs/stack-navigator
@@ -13,6 +12,8 @@
 * Firebase - https://firebase.google.com/?hl=pt-br
 * Expo Firebase - https://docs.expo.dev/guides/using-firebase/
 
+#### Projeto baseado no "Como criar uma aplicação em React Native e integrá-la com Firebase"
+(https://www.freecodecamp.org/portuguese/news/como-criar-uma-aplicacao-em-react-native-app-and-integrate-e-integra-la-com-firebase/)
 
 ### No Firebase
 * Criar um novo projeto
