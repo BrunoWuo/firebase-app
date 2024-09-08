@@ -6,7 +6,7 @@
 </div>
 
 ### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
-** Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
+#### Projeto para exercitar navegação entre telas, acesso ao Firebase (autenticação)
 * Stack Navigator - https://reactnavigation.org/docs/stack-navigator
 * React Native Elements - https://reactnativeelements.com/
 * Firebase - https://firebase.google.com/?hl=pt-br
@@ -21,8 +21,7 @@
 * [Roteiro em PDF](https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Firebase.pdf)
 
 ### Lista de Arquivos
-Baixar o arquivo da aula correspondente
-
+#### Baixar o arquivo da aula correspondente
 * 01 - Estrutura Base do Projeto - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte01.zip)
 * 02 - Configuração do Firebase / Teste de Registro de Usuario - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte02.zip)
 * 03 - Registro  / Login de Usuario no Firebase - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte03.zip)
