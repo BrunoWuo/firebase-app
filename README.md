@@ -20,7 +20,7 @@
 * Configurar a Autenticação por Email/Senha
 
 
-#### Lista de Arquivos
+### Lista de Arquivos
 Baixar o arquivo da aula correspondente
 
 * 01 - Estrutura Base do Projeto - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte01.zip)
