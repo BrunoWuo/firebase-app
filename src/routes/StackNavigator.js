@@ -46,11 +46,7 @@ export default function StackNavigator() {
           headerLeft: null,
           headerRight: () => <Text onPress={onLogOutPress} style={styles.logout} color="#788eec" >Sair</Text>,
           headerStyle: {
-            shadowColor: "#000", // Cor da sombra
-            shadowOffset: { width: 0, height: 2 }, // Deslocamento da sombra
-            shadowOpacity: 0.3, // Opacidade da sombra
-            shadowRadius: 3, // Raio da sombra
-            elevation: 5, // Elevação para Android
+            shadowColor: "#000", // Cor da sombra          
           },
         }}
       />
