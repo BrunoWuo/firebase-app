@@ -2,7 +2,7 @@
 <div align="center">
   <img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725139852.png" width=240>
   <img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725139858.png" width=240>
-
+  <img src="https://github.com/BrunoWuo/firebase-app/blob/main/imagens/Screenshot_1725824260.png" width=240>
 </div>
 
 ### Desenvolvido com React Native em Expo  - Para uso nas aulas de Mobile Senac Matinhos
