@@ -13,7 +13,7 @@
 * Expo Firebase - https://docs.expo.dev/guides/using-firebase/
 
 #### Projeto baseado do site [freeCodeCamp](https://www.freecodecamp.org/)
-[Como criar uma aplicação em React Native e integrá-la com Firebase](https://www.freecodecamp.org/portuguese/news/como-criar-uma-aplicacao-em-react-native-app-and-integrate-e-integra-la-com-firebase/)
+* [Como criar uma aplicação em React Native e integrá-la com Firebase](https://www.freecodecamp.org/portuguese/news/como-criar-uma-aplicacao-em-react-native-app-and-integrate-e-integra-la-com-firebase/)
 
 ### No Firebase - Criar um novo projeto
 * Configurar o App
