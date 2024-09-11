@@ -27,8 +27,8 @@
 * 03 - Registro  / Login de Usuario no Firebase - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte03.zip)
 * 04 - Recuperação de Senha  / Logout - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte04.zip)
 * 05 - Logout na Stackbar tela Home / Recurso no Registration para Salvar dados do usurio no firebase - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte05.zip)
-* 06 - Função Adicionar Tarefa - [Download]()
-* 07 - Função Editar e Excluir Tarefa - [Download]()
+* 06 - Função Adicionar Tarefa - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte06.zip)
+* 07 - Função Editar e Excluir Tarefa - [Download](https://github.com/BrunoWuo/firebase-app/archive/refs/heads/parte07.zip)
 
 ```sh
 # Instale as dependências do projeto e inicie:
